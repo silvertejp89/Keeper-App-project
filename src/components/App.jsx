@@ -6,20 +6,16 @@ import notes from '../notes';
 
 console.log(notes);
 
-function createEntry(note) {
-  return <Note key={note.key} title={note.title} content={note.content} />;
-}
-
 function App() {
   return (
     <div>
       <Header />
-      {notes.map(createEntry)}
+      {notes.map((note) => (
+        <Note key={note.key} title={note.title} content={note.content} />
+      ))}
       <Footer />
     </div>
   );
 }
 
 export default App;
-
-console.log('all is good');
